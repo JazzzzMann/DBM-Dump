@@ -1,0 +1,94 @@
+{
+  "name": "tempban",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "yWUta",
+  "actions": [
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "time.ban",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "infoIndex": "3",
+      "storage": "1",
+      "varName": "reason.ban",
+      "name": "Store Command Params"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "0",
+      "storage": "1",
+      "varName2": "mem",
+      "name": "Store Member Info"
+    },
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "3",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "reason": "**${tempVars(\"reason.ban\")}**",
+      "name": "Ban Member"
+    },
+    {
+      "title": "",
+      "author": "",
+      "color": "RANDOM",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "emb",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "",
+      "message": "**___//TEMPBAN//___**\n\n**Member:** ${mentionedUser}\n\n**Banned By:** ${member}\n\n**Reason:** ${tempVars(\"reason.ban\")}\n\n**Time (in minutes):** ${tempVars(\"time.ban\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "emb",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "time": "${tempVars(\"time.ban\")}",
+      "measurement": "2",
+      "name": "Wait"
+    },
+    {
+      "member": "2",
+      "varName": "mem",
+      "reason": "//TEMPBAN FINISHED//",
+      "name": "Unban Member"
+    }
+  ],
+  "comType": "0"
+}

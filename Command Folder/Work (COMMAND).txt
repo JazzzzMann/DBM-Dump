@@ -1,0 +1,38 @@
+{
+  "name": "work",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "yHHtt",
+  "actions": [
+    {
+      "storage": "1",
+      "varName": "work",
+      "min": "5000",
+      "max": "30000",
+      "name": "Generate Random Number"
+    },
+    {
+      "comment": "You Can Change The Gen Number To Anything You'd Like",
+      "color": "#ff8080",
+      "name": "Comment"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "money",
+      "changeType": "1",
+      "value": "tempVars(\"work\")",
+      "name": "Control Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "You Went To Work And Got ***${tempVars(\"work\")}*** Money!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "_timeRestriction": 18000,
+  "comType": "0"
+}

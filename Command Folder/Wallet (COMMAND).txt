@@ -1,0 +1,56 @@
+{
+  "name": "wallet",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "VkRUu",
+  "actions": [
+    {
+      "condition": "1",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "2",
+      "iftrueVal": "5",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "money",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "money.wallet",
+      "name": "Store Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${member} You Have ***${tempVars(\"money.wallet\")}*** Money",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "dataName": "money",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "money.walletmention",
+      "name": "Store Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "${mentionedUser} Has *${tempVars(\"money.walletmention\")}* Money",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}
